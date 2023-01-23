@@ -5,22 +5,22 @@ const canadaTxt = "canada.txt"
 const usaTxt = "usa.txt"
 const header = "country,year,population\n"
 
-// Delete if files exist
-fs.statSync(canadaTxt, (err, stat) => {
-  if (err) {
-    return
+try {
+  // check if file exists
+  const stats1 = fs.statSync(canadaTxt);
+  const stats2 = fs.statSync(usaTxt);
+  if (stats1.isFile()) {
+    // delete file
+    fs.unlinkSync(canadaTxt);
   }
-  fs.unlinkSync(canadaTxt)
-});
-
-fs.statSync(usaTxt, (err, stat) => {
-  if (err) {
-    return
+  if (stats2.isFile()) {
+    fs.unlinkSync(usaTxt);
   }
-  fs.unlinkSync(usaTxt)
-});
+} catch (e) {
+  fs.writeFileSync(canadaTxt, header);
+  fs.writeFileSync(usaTxt, header);
+}
 
-// Adding header to the file
 fs.writeFileSync(canadaTxt, header);
 fs.writeFileSync(usaTxt, header);
 
