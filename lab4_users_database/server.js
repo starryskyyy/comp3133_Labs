@@ -1,7 +1,7 @@
 require("dotenv").config()
 const express = require('express');
 const mongoose = require('mongoose');
-const userRouter = require('./routes/UserRoutes.js');
+const userRouter = require('./routes/UserRoutes');
 
 const app = express();
 app.use(express.json()); 
@@ -15,7 +15,7 @@ mongoose.connect(DB_CONNECTION_STRING, {
 }).then(success => {
   console.log('Success Mongodb connection')
 }).catch(err => {
-  console.log('Error Mongodb connection')
+  console.log('Error Mongodb connection', err)
 });
 
 app.use(userRouter);
