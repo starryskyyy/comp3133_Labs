@@ -2,22 +2,15 @@ const express = require('express');
 const userModel = require('../models/Users');
 const app = express();
 
-/*  used create new restaurant to see data
-app.post('/restaurant', async (req, res) => {
-    const restaurant = new restaurantModel(req.body);
+app.post('/users', async (req, res) => {
+    const data = req.body;
     
-    try {
-      await restaurant.save((err) => {
-        if(err){
-          res.send(err)
-        }else{
-          res.send(restaurant);
+    userModel.insertMany(data, (err, result) => {
+        if (err) {
+            return res.status(500).send(err.message);
         }
-      });
-    } catch (err) {
-      res.status(500).send(err);
-    }
-  });
-*/
+        res.send(result);
+    });
+});
 
 module.exports = app

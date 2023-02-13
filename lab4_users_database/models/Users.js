@@ -10,12 +10,12 @@ const UserSchema = new mongoose.Schema({
         required: true,
         minlength: 4
     },
-    
+
     email: {
         type: String,
         required: true,
         validate: {
-            validator: function(value) {
+            validator: function (value) {
                 return /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(value);
             },
             message: "Invalid email format"
@@ -34,7 +34,7 @@ const UserSchema = new mongoose.Schema({
             type: String,
             required: true,
             validate: {
-                validator: function(value) {
+                validator: function (value) {
                     return /^[a-zA-Z ]+$/.test(value);
                 },
                 message: "Use only alphabets and spaces for the city name"
@@ -44,7 +44,7 @@ const UserSchema = new mongoose.Schema({
             type: String,
             required: true,
             validate: {
-                validator: function(value) {
+                validator: function (value) {
                     return /^\d{5}-\d{4}$/.test(value);
                 },
                 message: "Invalid zip code"
@@ -62,29 +62,27 @@ const UserSchema = new mongoose.Schema({
         }
     },
     phone: {
-        phone: {
-            type: String,
-            required: true,
-            validate: {
-                validator: function(value) {
-                    return /^\d{1}-\d{3}-\d{3}-\d{4}$/.test(value);
-                },
-                message: "Invalid phone number"
-            }
+        type: String,
+        required: true,
+        validate: {
+            validator: function (value) {
+                return /^\d{1}-\d{3}-\d{3}-\d{4}$/.test(value);
+            },
+            message: "Invalid phone number"
         }
     },
     website: {
         type: String,
         required: true,
         validate: {
-            validator: function(value) {
+            validator: function (value) {
                 return /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([-.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/.test(value);
             },
             message: "Invalid URL"
         }
     },
     company: {
-        name: {
+          name: {
             type: String,
             required: true
         },

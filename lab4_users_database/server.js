@@ -2,9 +2,11 @@ require("dotenv").config()
 const express = require('express');
 const mongoose = require('mongoose');
 const userRouter = require('./routes/UserRoutes');
+const bodyParser = require("body-parser");
 
 const app = express();
 app.use(express.json()); 
+app.use(bodyParser.json());
 
 const DB_CONNECTION_STRING = process.env.DATABASE_URL
 const SERVER_PORT = 3000
