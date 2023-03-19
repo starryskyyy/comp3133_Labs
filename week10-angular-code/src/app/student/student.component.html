@@ -1,0 +1,29 @@
+<p>student works!</p>
+
+<button 
+    [disabled]="isDisabled"
+    (click)="onButtonClick()">Click me 1
+</button>
+
+
+<button 
+    [disabled]="isDisabled"
+    on-click="onButtonClick()">Click me 2
+</button>
+
+<input type="text" name="city" [value]="name" placeholder="Enter you name"/> {{name}}
+<input type="text" [(ngModel)]="city" placeholder="Enter City"/> {{city}}
+
+<h3>{{stud.id}}</h3>
+<h3>{{stud.fname | lowercase}}</h3>
+<h3>{{stud.lname | uppercase}}</h3>
+
+<ol>
+    <li *ngFor="let country of countries">{{country}}</li>
+</ol>
+
+<select>
+    <option *ngFor="let country of countries">{{country}}</option>
+</select>
+<br>
+<img src="{{imageURL}}"/>
