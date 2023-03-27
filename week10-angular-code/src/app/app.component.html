@@ -1,4 +1,38 @@
-<h1>Week 10</h1>
+<h1>Week 10 - {{ name}}</h1>
 <span>{{ title }} app is running!</span>
-<div app="college"></div>
-<app-student></app-student>
+<div college></div>
+<h1>Pipes</h1>
+
+{{ salary }} <br>
+{{ salary | currency }} <br>
+{{ salary | currency:'EUR'}} <br>
+{{ salary | currency:'JYP'}} <br>
+{{ salary | currency:'INR'}} <br>
+{{ salary | currency:'BRL'}} <br>
+{{ salary | currency:'CNY'}} <br>
+{{ salary | currency:'AED'}} <br>
+
+{{ today }} <br>
+{{ today | date:'medium'}} <br>
+{{ today | date:'short'}} <br>
+{{ today | date:'dd-MM-yyyy'}} <br>
+{{ today | date:'hh:mm:ss'}} <br>
+
+<!-- {{ "Pritesh" | greet }} -->
+{{ "Elizaveta" | greet:"Vygovskaia"}} <br>
+
+{{ student | json }}
+
+<h1>Custom Directive</h1>
+<p appAppColor>George Brown College</p>
+<h2 appAppColor>George Brown College</h2>
+<h3 appAppColor></h3>
+<!-- <a href="/student">Student</a> -->
+<a [routerLink]="['/student']">Student</a>
+<a [routerLink]="['/faculty']">Faculty</a>
+<a [routerLink]="['/products']">Products</a>
+<a [routerLink]="['/userList']">Users</a>
+<h1>Other</h1>
+<!-- <app-student></app-student> -->
+<router-outlet></router-outlet>
+<h1>I am footer</h1>

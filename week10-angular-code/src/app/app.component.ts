@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'week10-angular-code';
+  title = 'Week10 Angular Example';
+  name = "Elizaveta Vygovskaia"
+  salary = 1234567
+  today:Date = new Date()
+
+  student ={
+    id:1,
+    fnm:"Elizaveta",
+    lnm:"Vygovskaia"
+  }
 }
