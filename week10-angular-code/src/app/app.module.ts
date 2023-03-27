@@ -13,6 +13,10 @@ import { ProductComponent } from './product/product.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { UserdatalistComponent } from './userdatalist/userdatalist.component';
 import {HttpClientModule } from '@angular/common/http';
+import { HeroesComponent } from './heroes/heroes.component';
+import { RemoveSpacesPipe } from './remove-spaces.pipe';
+import { InputFormatDirective } from './input-format.directive';
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {HttpClientModule } from '@angular/common/http';
     AppColorDirective,
     ProductComponent,
     ProductDetailsComponent,
-    UserdatalistComponent
+    UserdatalistComponent,
+    HeroesComponent,
+    RemoveSpacesPipe,
+    InputFormatDirective,
+    HeroDetailComponent
   ],
   imports: [
     BrowserModule,
